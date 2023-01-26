@@ -6,8 +6,9 @@ def search_replace(my_list, search, replace):
             newlist.append(replace)
         else:
             newlist.append(i)
-            
+
     return newlist
+
 
 '''
 return list(replace if i == search else i for i in my_list)
