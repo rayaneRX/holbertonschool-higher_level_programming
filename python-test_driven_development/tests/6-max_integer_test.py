@@ -1,11 +1,11 @@
 #!/usr/bin/python3
-"""Unittest for max_integer([..])
-"""
+""" add Unittests."""
+
 import unittest
 max_integer = __import__('6-max_integer').max_integer
 
 
-class TestMaxInteger(unittest.TestCase):
+class Testmaxinteger(unittest.TestCase):
     def test_area(self):
         self.assertAlmostEqual(max_integer([1, 2, 3, 4]), 4)
         self.assertAlmostEqual(max_integer([66, 15, 6, 12]), 66)
