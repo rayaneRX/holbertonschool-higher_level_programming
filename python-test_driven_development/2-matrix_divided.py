@@ -5,6 +5,7 @@ msg = "matrix must be a matrix (list of lists) of integers/floats"
 
 
 def matrix_divided(matrix, div):
+    """function that divides all elements of a matrix."""
     if not all(isinstance(popo, list) for popo in matrix):
         raise TypeError(msg)
     if not all(isinstance(op, (int, float)) for popo in matrix for op in popo):
@@ -17,5 +18,5 @@ def matrix_divided(matrix, div):
 
     if div == 0:
         raise ZeroDivisionError("division by zero")
-            
+
     return [list(map(lambda m: round(m / div, 2), row)) for row in matrix]
