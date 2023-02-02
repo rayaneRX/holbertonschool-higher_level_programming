@@ -12,10 +12,14 @@ This is an example text file in reStructuredText format.  First import
 Now use it:
 
     >>> text_indentation("")
-    
+
 
     >>> text_indentation("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quonam modo?")
     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     <BLANKLINE>
     Quonam modo?
     <BLANKLINE>
+
+    >>> text_indentation(65416)
+    Traceback (most recent call last):
+    TypeError: text must be a string
