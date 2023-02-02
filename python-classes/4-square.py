@@ -4,11 +4,13 @@
 
 class Square:
     """Private instance attribute: size,Instantiation with optional size
-    Public instance method: def area(self): that returns the current square area"""
+    Public instance method: def
+    area(self): that returns the current square area"""
 
     @property
     def size(self):
         return self.__size
+
     @size.setter
     def size(self, value):
         if type(value) != int:
@@ -19,6 +21,6 @@ class Square:
 
     def __init__(self, size=0):
         self.__size = size
-    
+
     def area(self):
         return self.__size ** 2
