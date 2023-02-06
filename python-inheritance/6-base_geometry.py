@@ -3,7 +3,7 @@
 
 
 class BaseGeometry:
-    """ raises an Exception with the message 
+    """ raises an Exception with the message
     area() is not implemented"""
 
     def area(self):
