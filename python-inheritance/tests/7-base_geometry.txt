@@ -1,46 +1,73 @@
-The ``7-base_geometry`` module
-======================
+The ``7-base_geometry'' module
+============================
 
-Using ``base_geometry``
--------------------
+Using ``BaseGeometry``
+---------------------
 
-This is an example text file in reStructuredText format.  First import
-``base_geometry`` from the ``7-base_geometry`` module:
+	>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
-    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
-Now use it:
-
+Test: integer_validator with valid:
     >>> bg = BaseGeometry()
     >>> bg.integer_validator("my_int", 12)
     >>> bg.integer_validator("width", 89)
 
-    >>> bg = area()
+Test: value as list:
+    >>> bg.integer_validator("name", [10])
     Traceback (most recent call last):
-    NameError: name 'area' is not defined
+    TypeError: name must be an integer
 
-    >>> bg = integer_validator()
+Test: Just a single argument:
+    >>> bg.integer_validator("Holberton", )
     Traceback (most recent call last):
-    NameError: name 'integer_validator' is not defined
+    TypeError: integer_validator() missing 1 required positional argument: 'value'
 
-    >>> bg = integer_validator("age", None)
+Test: without parameter:
+    >>> bg.integer_validator()
     Traceback (most recent call last):
-    NameError: name 'integer_validator' is not defined
+    TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
 
-    >>> bg = integer_validator("77", [8])
+Test: integer_validator with float input:
+    >>> bg.integer_validator("my_int", 12.5)
     Traceback (most recent call last):
-    NameError: name 'integer_validator' is not defined
+    TypeError: my_int must be an integer
 
-    >>> bg = integer_validator("77", )
+Test: area function:
+    >>> bg.area()
     Traceback (most recent call last):
-    NameError: name 'integer_validator' is not defined
+    Exception: area() is not implemented
 
-    >>> bg = integer_validator()
+Test: integer_validator with negative input:
+    >>> bg.integer_validator("my_int", -12)
     Traceback (most recent call last):
-    NameError: name 'integer_validator' is not defined
+    ValueError: my_int must be greater than 0
 
-    >>> bg = integer_validator("abc", 7.5)
+Test: integer_validator with string input:
+    >>> bg.integer_validator("my_int", "Holberton")
     Traceback (most recent call last):
-    NameError: name 'integer_validator' is not defined
+    TypeError: my_int must be an integer
 
-    
+Test: integer_validator with value less than or equal to zero:
+    >>> bg.integer_validator("age", 0)
+    Traceback (most recent call last):
+    ValueError: age must be greater than 0
+
+Test: check integer_validator with tuple input:
+    >>> bg.integer_validator("age", (4,))
+    Traceback (most recent call last):
+    TypeError: age must be an integer
+
+Test: value for bool:
+    >>> bg.integer_validator("Holberton", True)
+    Traceback (most recent call last):
+    TypeError: Holberton must be an integer
+
+Test: Validate the Input is not a Set:
+    >>> bg.integer_validator("age", {3, 4})
+    Traceback (most recent call last):
+    TypeError: age must be an integer
+
+Titre: integer_validator with None:
+    >>> bg.integer_validator("age", None)
+    Traceback (most recent call last):
+    TypeError: age must be an integer
