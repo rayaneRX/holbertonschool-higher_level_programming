@@ -27,3 +27,7 @@ Now use it:
     Traceback (most recent call last):
     NameError: name 'integer_validator' is not defined
 
+    >>> bg = integer_validator("77", [8])
+    Traceback (most recent call last):
+    NameError: name 'integer_validator' is not defined
+
