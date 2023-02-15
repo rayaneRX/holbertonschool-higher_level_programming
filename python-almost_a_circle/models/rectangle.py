@@ -68,10 +68,11 @@ class Rectangle(Base):
 
     def display(self):
         """display"""
-        for i in range(self.height):
-            for j in range(self.width):
-                print("#", end="")
+
+        for m in range(self.__y):
             print()
+        for i in range(self.__height):
+            print(" " * self.__x + "#" * self.__width)
 
     def __str__(self):
         """class Rectangle by overriding the __str__ method"""
