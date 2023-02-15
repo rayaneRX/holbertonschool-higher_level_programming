@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """ class Rectangle that inherits from Base"""
-Base = __import__('models').Base
+from models.base import Base
 
 
 class Rectangle(Base):
@@ -63,4 +63,34 @@ class Rectangle(Base):
         self.__y = value
 
     def area(self):
+        """return the area"""
         return self.__width * self.__height
+
+    def display(self):
+        for i in range(self.height):
+            for j in range(self.width):
+                print("#", end="")
+            print()
+    
+    def __str__(self):
+        """class Rectangle by overriding the __str__ method"""
+        id = self.id
+        x = self.x
+        y = self.y
+        w = self.__width
+        h = self.__height
+        return f"[Rectangle] ({id}) {x}/{y} - {w}/{h}"
+
+    def update(self, *args):
+        """that assigns an argument to each attribute"""
+        if args:
+            if len(args) == 1:
+                self.id = args[0]
+            if len(args) == 2:
+                self.width = args[1]
+            if len(args) == 3:
+                self.height = args[2]
+            if len(args) == 4:
+                self.x = args[3]
+            if len(args) == 5:
+                self.y = args[4]
