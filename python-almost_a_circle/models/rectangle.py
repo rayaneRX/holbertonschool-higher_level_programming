@@ -72,7 +72,7 @@ class Rectangle(Base):
             for j in range(self.width):
                 print("#", end="")
             print()
-    
+
     def __str__(self):
         """class Rectangle by overriding the __str__ method"""
         id = self.id
