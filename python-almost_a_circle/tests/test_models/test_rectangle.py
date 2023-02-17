@@ -82,3 +82,7 @@ class test_rectangle(unittest.TestCase):
         r = Rectangle(2, 5, 4, 1, 7)
         expected_output = {'id': 7, 'width': 2, 'height': 5, 'x': 4, 'y': 1}
         self.assertDictEqual(r.to_dictionary(), expected_output)
+    def test_update(self):
+        rectangle = Rectangle(10, 10, 10, 10, 1)
+        rectangle.update(id=4)
+        self.assertEqual(rectangle.id, 4)
