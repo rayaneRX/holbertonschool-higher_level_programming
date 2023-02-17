@@ -58,3 +58,27 @@ class test_rectangle(unittest.TestCase):
         r = Rectangle(3, 4, 2, 1, 10)
         expected_output = "[Rectangle] (10) 2/1 - 3/4"
         self.assertEqual(str(r), expected_output)
+    def test_display_without_x_y(self):
+        """
+        Test that the display method outputs the correct
+        representation of a rectangle
+        """
+        r = Rectangle(2, 2)
+        expected_output = "##\n##\n"
+        with StringIO() as buf, redirect_stdout(buf):
+            r.display()
+            output = buf.getvalue()
+            self.assertEqual(output, expected_output)
+
+    def test_display(self):
+        """Test rectangle display exists"""
+        r = Rectangle(2, 2, 2, 2)
+        with StringIO() as buffer, redirect_stdout(buffer):
+            r.display()
+            self.assertEqual(buffer.getvalue(), "\n\n  ##\n  ##\n")
+
+    def test_to_dictionary(self):
+        """Test Rectangle to_dictionary"""
+        r = Rectangle(2, 5, 4, 1, 7)
+        expected_output = {'id': 7, 'width': 2, 'height': 5, 'x': 4, 'y': 1}
+        self.assertDictEqual(r.to_dictionary(), expected_output)
