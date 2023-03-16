@@ -9,7 +9,7 @@ if __name__ == "__main__":
 
     cursor = db.cursor()
 
-    cursor.execute("SELECT * FROM states WHERE name LIKE 'N%';")
+    cursor.execute("SELECT * FROM states WHERE BINARY name LIKE 'N%';")
 
     result = cursor.fetchall()
 
