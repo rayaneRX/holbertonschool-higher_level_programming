@@ -14,8 +14,14 @@ if __name__ == "__main__":
     cursor.execute(
             "SELECT cities.name FROM cities\
             JOIN states ON cities.state_id = states.id\
-            WHERE states.name = {}".format(sys.argv[4]))
+            WHERE states.name = '{}'".format(sys.argv[4]))
     result = cursor.fetchall()
 
-    for row in result:
-        print(row)
+    for row in range(len(result)):
+        if row < len(result) - 1:
+            indx = result[row]
+            print(indx[0], end=', ')
+        else:
+            indx = result[row]
+            print(indx[0], end="")
+    print()
