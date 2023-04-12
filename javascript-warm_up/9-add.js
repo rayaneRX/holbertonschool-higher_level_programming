@@ -8,4 +8,3 @@ function add (a, b) {
   const b = process.argv[3];
   
   console.log(add(a, b));
-  
