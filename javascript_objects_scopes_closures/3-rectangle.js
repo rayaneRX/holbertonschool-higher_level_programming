@@ -7,14 +7,14 @@ class Rectangle {
       this.height = h;
     }
   }
-  
+
   print () {
-    for (let i = 0; i < size; i++) {
-        let row = '';
-        for (let j = 0; j < size; j++) {
+    for (let i = 0; i < this.width; i++) {
+      let row = '';
+      for (let j = 0; j < this.height; j++) {
         row += 'X';
-        }
-        console.log(row);
+      }
+      console.log(row);
     }
   }
 }
