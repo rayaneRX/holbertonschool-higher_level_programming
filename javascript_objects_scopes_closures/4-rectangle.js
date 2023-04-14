@@ -1,4 +1,5 @@
 #!/usr/bin/node
+/* Add constructor validation to Rectangle class */
 
 class Rectangle {
   constructor (w, h) {
@@ -13,6 +14,7 @@ class Rectangle {
       console.log('X'.repeat(this.width));
     }
   }
+
   rotate () {
     [this.width, this.height] = [this.height, this.width];
   }
@@ -22,4 +24,5 @@ class Rectangle {
     this.height *= 2;
   }
 }
+
 module.exports = Rectangle;
