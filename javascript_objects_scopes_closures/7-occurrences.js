@@ -7,5 +7,5 @@ for (studentAge of list) {
         counter++;
     }
 }
-console.log(counter)
+return counter;
 };
