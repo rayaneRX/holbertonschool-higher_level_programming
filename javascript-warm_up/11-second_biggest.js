@@ -1,21 +1,21 @@
-#!/usr/bin/node
-/* Script that searches the second biggest integer in the list */
+!/usr/bin/node
 
-const args = process.argv.slice(2).map(Number);
+if (process.argv.length <= 3) console.log(0);
+else {
+  let max = 0;
+  let secondMax = 0;
+  const newList = [];
 
-function secondLargest (array) {
-  const sortedArray = array.sort((a, b) => b - a);
-  if (sortedArray.length < 2) {
-    return 0;
-  } else {
-    return sortedArray[1];
+  for (let i = 0; i < process.argv.length - 2; i++) {
+    if (max < +process.argv.slice(2)[i]) max = +process.argv.slice(2)[i];
   }
-}
 
-if (args.length === 0) {
-  console.log(0);
-} else if (args.length === 1) {
-  console.log(0);
-} else {
-  console.log(secondLargest(args));
+  for (let i = 0; i < process.argv.slice(2).length; i++) {
+    if (+process.argv.slice(2)[i] !== max) { newList.push(+process.argv.slice(2)[i]); }
+  }
+
+  for (let i = 0; i < newList.length; i++) {
+    if (secondMax < +newList[i]) secondMax = +newList[i];
+  }
+  console.log(secondMax);
 }
