@@ -8,6 +8,6 @@ const str = process.argv[3];
 fs.writeFile(ftr, str, 'utf-8', (err) => {
   if (err) {
     console.error(err);
-    return;
+
   }
 });
