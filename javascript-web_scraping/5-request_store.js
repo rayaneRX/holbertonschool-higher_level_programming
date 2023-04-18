@@ -12,9 +12,9 @@ request(ftr, function (error, response, body) {
     return;
   }
 
-  fs.writeFile(str, body, 'utf-8', function (error)  {
+  fs.writeFile(str, body, 'utf-8', function (error) {
     if (error) {
-    console.error(error);
+      console.error(error);
     }
   });
 });
