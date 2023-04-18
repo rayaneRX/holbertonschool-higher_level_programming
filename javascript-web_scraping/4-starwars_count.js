@@ -16,7 +16,7 @@ request(api, function (error, response, body) {
 
     for (let i = 0; i < films.length; i++) {
       const characters = films[i].characters;
-      if (characters.includes(`https://swapi-api.hbtn.io/api/people/${characterID}/` )) {
+      if (characters.includes(`https://swapi-api.hbtn.io/api/people/${characterID}/`)) {
         count++;
       }
       if (characters.includes('http://swapi.co/api/people/18/')) {
