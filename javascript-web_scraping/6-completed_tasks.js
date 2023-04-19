@@ -14,7 +14,7 @@ request(api, function (error, response, body) {
     for (const todos of todo) {
           if (todos.completed === true)
             completed.push(todos)}
-    console.log(completed);
+    console.log(completed.length);
   //   for (const todos of todo) {
   //     if (todos.completed === true) {
   //       // completed.push(todos)
