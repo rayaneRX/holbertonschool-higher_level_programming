@@ -14,7 +14,6 @@ request(api, function (error, response, body) {
     for (const todos of todo) {
           if (todos.completed === true)
             completed.push(todos)}
-    console.log(completed);
     for (let i=0; i < completed.length; i++) {
     const userId = completed[i].userId;
     if (completedTasks[userId]) completedTasks[userId]++;
@@ -31,5 +30,5 @@ request(api, function (error, response, body) {
   //     }
   //   }
   // }
-  // console.log(completedTasks);
+  console.log(completedTasks);
 });
