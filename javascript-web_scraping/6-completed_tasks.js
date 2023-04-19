@@ -10,15 +10,20 @@ request(api, function (error, response, body) {
   }
     const todo = JSON.parse(body);
     const completedTasks = {};
-
+    const completed = []
     for (const todos of todo) {
-      if (todos.completed === true) {
-        if (todos.userId in completed) {
-        completedTasks[todos.userId]++;
-      } else {
-        completedTasks[todos.userId] = 1;
-      }
-    }
-  }
-  console.log(completedTasks);
+          if (todos.completed === true)
+            completed.push(todos)}
+    console.log(completed);
+  //   for (const todos of todo) {
+  //     if (todos.completed === true) {
+  //       // completed.push(todos)
+  //       if (todos.userId in completed) {
+  //       completedTasks[todos.userId]++;
+  //     } else {
+  //       completedTasks[todos.userId] = 1;
+  //     }
+  //   }
+  // }
+  // console.log(completedTasks);
 });
