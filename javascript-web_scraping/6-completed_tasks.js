@@ -13,10 +13,10 @@ request(api, function (error, response, body) {
 
     for (const todos of todo) {
       if (todos.completed === true) {
-        if (todoItem.userId in completed) {
-        completedTasks[todoItem.userId]++;
+        if (todos.userId in completed) {
+        completedTasks[todos.userId]++;
       } else {
-        completedTasks[todoItem.userId] = 1;
+        completedTasks[todos.userId] = 1;
       }
     }
   }
