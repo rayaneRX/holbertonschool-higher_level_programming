@@ -14,7 +14,13 @@ request(api, function (error, response, body) {
     for (const todos of todo) {
           if (todos.completed === true)
             completed.push(todos)}
-    console.log(completed.length);
+    console.log(completed);
+    for (let i=0; i < completed.length; i++) {
+    const userId = completed[i].userId;
+    if (completedTasks[userId]) completedTasks[userId]++;
+    else completedTasks[userId] = 1;
+
+  }
   //   for (const todos of todo) {
   //     if (todos.completed === true) {
   //       // completed.push(todos)
