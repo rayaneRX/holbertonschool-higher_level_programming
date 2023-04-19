@@ -20,15 +20,5 @@ request(api, function (error, response, body) {
     else completedTasks[userId] = 1;
 
   }
-  //   for (const todos of todo) {
-  //     if (todos.completed === true) {
-  //       // completed.push(todos)
-  //       if (todos.userId in completed) {
-  //       completedTasks[todos.userId]++;
-  //     } else {
-  //       completedTasks[todos.userId] = 1;
-  //     }
-  //   }
-  // }
   console.log(completedTasks);
 });
